@@ -15,8 +15,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        resultLabel.frame = CGRect(x: 20, y: 20, width: 300, height: 150)
+        
+        let screenWidth:Double = Double(UIScreen.main.bounds.size.width)
+        
+        resultLabel.frame = CGRect(x: 20, y: 40, width: screenWidth - 40, height: 150)
         resultLabel.backgroundColor = UIColor.lightGray
+        resultLabel.text = "0"
+        resultLabel.textAlignment = NSTextAlignment.right
         self.view.addSubview(resultLabel)
         
     }
