@@ -32,6 +32,8 @@ class ViewController: UIViewController {
 
 //        for i in (0 ..< 5).reversed() { // 反転
 
+        let btnLabel = ["7", "8", "9", "/", "4", "5", "6", "x", "1", "2", "3", "-", "0", "C", "+", "="]
+        
         for i:Int in 0..<Int(numRows) {
             for j:Int in 0..<Int(numColumns) {
                 let button = UIButton()
@@ -42,6 +44,8 @@ class ViewController: UIViewController {
                 //        button.frame = CGRect(x: btnX, y: btnY, width: btnWidth, height: btnHeight)
                 button.frame = CGRect(x: btnX, y: btnY, width: btnWidth, height: btnHeight)
                 button.backgroundColor = UIColor.blue
+                let btnNum = i * Int(numRows) + j
+                button.setTitle(btnLabel[btnNum], for: UIControlState.normal)
                 self.view.addSubview(button)
 
             }
