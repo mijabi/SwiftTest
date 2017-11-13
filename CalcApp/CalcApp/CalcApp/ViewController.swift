@@ -11,10 +11,10 @@ import UIKit
 class ViewController: UIViewController {
     
     var resultLabel = UILabel()
-    let numRows = 4
-    let numColumns = 4
-    let btnMargin = 10
-    let labelHeight = 190
+    let numRows:Double = 4
+    let numColumns:Double = 4
+    let btnMargin:Double = 10
+    let labelHeight:Double = 190
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,22 +24,39 @@ class ViewController: UIViewController {
         let screenHeight:Double = Double(UIScreen.main.bounds.size.height)
 
         
-        resultLabel.frame = CGRect(x: Double(btnMargin), y: 40, width: Double(screenWidth) - (Double(btnMargin) * 2), height: 150)
+        resultLabel.frame = CGRect(x: btnMargin, y: 40, width: screenWidth - (btnMargin * 2), height: 150)
         resultLabel.backgroundColor = UIColor.lightGray
         resultLabel.text = "0"
         resultLabel.textAlignment = NSTextAlignment.right
         self.view.addSubview(resultLabel)
-        
+
+//        for i in (0 ..< 5).reversed() { // 反転
+
+        for i:Int in 0..<Int(numRows) {
+            for j:Int in 0..<Int(numColumns) {
+                let button = UIButton()
+                let btnWidth:Double = (screenWidth - (btnMargin * (numColumns + 1))) / numColumns
+                let btnHeight:Double = (screenHeight - labelHeight - (btnMargin * (numRows + 1))) / numRows
+                let btnX:Double = btnMargin + (screenWidth - btnMargin) / numColumns * Double(j)
+                let btnY:Double = labelHeight + btnMargin + (screenHeight - labelHeight - btnMargin) / numRows * Double(i)
+                //        button.frame = CGRect(x: btnX, y: btnY, width: btnWidth, height: btnHeight)
+                button.frame = CGRect(x: btnX, y: btnY, width: btnWidth, height: btnHeight)
+                button.backgroundColor = UIColor.blue
+                self.view.addSubview(button)
+
+            }
+        }
+/*
         let button = UIButton()
-        let btnWidth = (screenWidth - (Double(btnMargin) * Double(numColumns + 1))) / Double(numColumns)
-        let btnHeight = (screenHeight - Double(labelHeight) - Double(btnMargin * (numRows + 1))) / Double(numRows)
-        let btnX = btnMargin
-        let btnY = labelHeight + btnMargin
+        let btnWidth:Double = (screenWidth - (btnMargin * (numColumns + 1))) / numColumns
+        let btnHeight:Double = (screenHeight - labelHeight - (btnMargin * (numRows + 1))) / numRows
+        let btnX:Double = btnMargin
+        let btnY:Double = labelHeight + btnMargin
 //        button.frame = CGRect(x: btnX, y: btnY, width: btnWidth, height: btnHeight)
-        button.frame = CGRect(x: btnX, y: btnY, width: Int(btnWidth), height: Int(btnHeight))
+        button.frame = CGRect(x: btnX, y: btnY, width: btnWidth, height: btnHeight)
         button.backgroundColor = UIColor.blue
         self.view.addSubview(button)
-        
+*/
         
     }
 
