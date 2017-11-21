@@ -31,6 +31,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
             if let placemarks = placemarks?[0] {
                 if let targetCoordinate = placemarks.location?.coordinate {
                     print(targetCoordinate)
+                    let pin = MKPointAnnotation()
+                    pin.coordinate = targetCoordinate
+                    pin.title = searchKeyword
+                    
+                    self.displayMap.addAnnotation(pin)
+                    self.displayMap.region = MKCoordinateRegionMakeWithDistance(targetCoordinate, 500, 500)
                 }
             }
         })
