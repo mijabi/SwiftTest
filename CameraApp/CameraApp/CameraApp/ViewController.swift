@@ -20,6 +20,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBOutlet weak var photoImage: UIImageView!
+    
+    @IBAction func cameraLaunchAction(_ sender: Any) {
+    }
+    
+    @IBAction func shareAction(_ sender: Any) {
+    }
 
 }
 
