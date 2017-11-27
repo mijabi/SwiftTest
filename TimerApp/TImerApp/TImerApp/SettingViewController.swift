@@ -32,5 +32,8 @@ class SettingViewController: UIViewController {
     }
     */
 
+    @IBOutlet weak var timerPicker: UIPickerView!
+    @IBAction func chooseAction(_ sender: Any) {
+    }
     
 }

@@ -32,15 +32,14 @@
                                 <rect key="frame" x="38" y="404" width="121" height="75"/>
                                 <state key="normal" image="start"/>
                                 <connections>
-                                    <action selector="startTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TAx-x2-9B9"/>
-                                    <action selector="startTimerAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YqJ-jC-hos"/>
+                                    <action selector="startTimerAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nF6-Jp-b4k"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AGv-1o-zVD">
                                 <rect key="frame" x="227" y="404" width="121" height="75"/>
                                 <state key="normal" image="stop"/>
                                 <connections>
-                                    <action selector="stopTimerAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lz3-AW-gDf"/>
+                                    <action selector="stopTimerAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YfC-eP-Ju9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -65,7 +64,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="timeDisplay" destination="5RD-79-hoN" id="qHt-uH-9rg"/>
+                        <outlet property="timeDisplay" destination="5RD-79-hoN" id="lTn-dN-Msc"/>
                         <segue destination="8Ua-1r-V0u" kind="show" identifier="openSetting" id="ZYj-gu-Vsd"/>
                     </connections>
                 </viewController>
@@ -105,6 +104,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lcz-3N-GSQ">
                                 <rect key="frame" x="121" y="392" width="133" height="83"/>
                                 <state key="normal" image="select"/>
+                                <connections>
+                                    <action selector="chooseAction:" destination="8Ua-1r-V0u" eventType="touchUpInside" id="oqb-hf-KBy"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -117,6 +119,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YTh-OJ-5yM"/>
                     </view>
+                    <connections>
+                        <outlet property="timerPicker" destination="3YW-Ux-xJb" id="vWK-nq-hQ6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LPb-Le-7LW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
