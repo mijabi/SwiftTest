@@ -41,6 +41,11 @@ class ViewController: UIViewController {
     }
 
     @IBAction func stopTimerAction(_ sender: Any) {
+        if let nowTimer = timer {
+            if nowTimer.isValid == true { // timer が動いている場合に停止する？
+                nowTimer.invalidate()
+            }
+        }
     }
     
     func displayUpdate() -> Int {
