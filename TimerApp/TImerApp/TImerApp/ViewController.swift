@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     var duration = 0
     let settingKey = "timerValue"
     
-    override func viewDidLoad() {
+    override func viewDidLoad() { // view が表示されたら実行する部分
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         let settings = UserDefaults.standard // 前回起動時の状態を保持？
@@ -25,10 +25,21 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        duration = 0;
+        _ = displayUpdate() // 呼ぶだけ。使ってない関数があるというエラーを出さない為の tips？
+    }
 
     @IBOutlet weak var timeDisplay: UILabel!
     
     @IBAction func settingButtonAction(_ sender: Any) {
+        if let nowTimer = timer {
+            if nowTimer.isValid == true { // timer が動いている場合は止める
+                nowTimer.invalidate()
+            }
+        }
+        performSegue(withIdentifier: "openSetting", sender: nil) // 画面遷移する処理
     }
 
     @IBAction func startTimerAction(_ sender: Any) {
