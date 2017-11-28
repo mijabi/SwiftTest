@@ -19,24 +19,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5RD-79-hoN">
-                                <rect key="frame" x="87" y="208.5" width="200" height="50"/>
+                                <rect key="frame" x="88" y="208.5" width="200" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="RbS-jd-YeG"/>
-                                    <constraint firstAttribute="width" constant="200" id="oam-e7-HHj"/>
+                                    <constraint firstAttribute="width" priority="500" constant="200" id="oam-e7-HHj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhd-Xs-QcC">
-                                <rect key="frame" x="38" y="404" width="121" height="75"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhd-Xs-QcC">
+                                <rect key="frame" x="41" y="392" width="133" height="83"/>
                                 <state key="normal" image="start"/>
                                 <connections>
                                     <action selector="startTimerAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nF6-Jp-b4k"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AGv-1o-zVD">
-                                <rect key="frame" x="227" y="404" width="121" height="75"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AGv-1o-zVD">
+                                <rect key="frame" x="201" y="392" width="133" height="83"/>
                                 <state key="normal" image="stop"/>
                                 <connections>
                                     <action selector="stopTimerAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YfC-eP-Ju9"/>
