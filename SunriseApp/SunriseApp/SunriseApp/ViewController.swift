@@ -20,6 +20,15 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBOutlet weak var cityNameInput: UITextField!
+    
+    @IBOutlet weak var sunriseTimeLabel: UILabel!
+    
+    @IBAction func findSunrise(_ sender: Any) {
+    }
+    
+    
+    
+    
 }
 
