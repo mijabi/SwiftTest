@@ -34,7 +34,12 @@ class ViewController: UIViewController {
             let apiURL = URL(string: url)!
             let data = try Data(contentsOf: apiURL)
             let json = try JSONSerialization.jsonObject(with: data) as! [String:Any]
-            print(json)
+//            print(json)
+            let query = json["query"] as! [String:Any] // これは型付き変数ではなく、値が２つの意味！！！！？
+            let results = query["results"] as! [String:Any]
+            let channel = results["channel"] as! [String:Any]
+            let astronomy = channel["astronomy"] as! [String:Any]
+            self.sunriseTimeLabel.text = "日の出時刻：\(astronomy["sunrise"]!)"
         } catch {
             self.sunriseTimeLabel.text = "サーバに接続できません"
         }
