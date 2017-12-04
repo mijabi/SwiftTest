@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {// delegate 画面のイベントとプログラムを中継する。
+class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    // delegate 画面のイベントとプログラムを中継する。
     
 
     @IBOutlet weak var photoDisplay: UIImageView!
@@ -22,22 +23,24 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         // Do any additional setup after loading the view, typically from a nib.
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        imagePicker.sourceType = .camera
+        imagePicker.sourceType = .camera // カメラで撮るのか、写真一覧から選ぶのか
+        // *ここで実機じゃないとカメラが起動できないからエラー
         
     }
 
     override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+//        super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
         
     }
 
     @IBAction func takePhoto(_ sender: Any) {
+//        present(imagePicker, animated: true, completion: nil) // imagePicker を表示する処理？
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        photoDisplay.image = info[UIImagePickerControllerOriginalImage] as? UIImage // as? → UIImage に変換する
-        imagePicker.dismiss(animated: true, completion: nil)
+//        photoDisplay.image = info[UIImagePickerControllerOriginalImage] as? UIImage // as? → UIImage に変換する
+//        imagePicker.dismiss(animated: true, completion: nil)
         
     }
 }
